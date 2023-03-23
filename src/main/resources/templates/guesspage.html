@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Guessing Game</title>
+</head>
+<body>
+<p>Guess the secret number (1-100)</p>
+<form action="/game" method="post">
+  <input name="guessNo" type="text" size="8" value="0">
+  <input name="submit" type="submit" value="GUESS!">
+
+</form>
+<p th:text="${guesses}"></p>
+<table>
+  <thead>
+  <tr><th>Guessed numbers:</th></tr>
+  </thead>
+  <tbody>
+  <tr th:each="game: ${answers}">
+    <td th:text="${game}"></td>
+  </tr>
+  </tbody>
+</table>
+</br>
+</br>
+</br>
+<a href="/toplist">TOPLIST</a>
+</body>
+</html>

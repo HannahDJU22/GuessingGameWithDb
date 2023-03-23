@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Toplist</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr><th>Current best players</th></tr>
+    </thead>
+    <form method="get" action="/toplist"></form>
+    <tbody>
+    <tr th:each="player: ${toplist}">
+        <td th:text="${player.name}"></td>
+        <td th:text="${player.averageScore}"></td>
+    </tr>
+    </tbody>
+</table>
+<p>Back to the game --> </p><a href="/game">GAME</a>
+</body>
+</html>
